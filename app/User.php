@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Model\Task;
 use App\Model\TwoAuthToken;
 use App\Notifications\MyResetPasswordNotification;
 use App\Notifications\MyVerifyEmailNotification;
@@ -42,6 +43,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'skill'=>'array'
     ];
 
+    public function task()
+    {
+        return $this->belongsToMany(Task::class);
+    }
     public function is_supervisor()
     {
         return $this->is_supervisor;

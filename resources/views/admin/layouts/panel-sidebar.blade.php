@@ -64,7 +64,7 @@
                         <a href="#" class="nav-link {{routeIsActive('panel/tasks','active')}}">
                             <i class="nav-icon fa fa-users"></i>
                             <p>
-                                کاربران
+                                کارها
                                 <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>

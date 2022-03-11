@@ -12,11 +12,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('can:delete,user')->only('delete');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +20,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate(20);
-        $users = $this->shoeAdmin($users);
+        $users = $this->showAdmin($users);
         return view('admin.Users.UserList', ['users' => $users]);
     }
 
@@ -156,7 +151,7 @@ class UserController extends Controller
      * @param $users
      * @return mixed
      */
-    public function shoeAdmin($users)
+    public function showAdmin($users)
     {
         if (\request('admin')) {
             $users = User::sortAdmin()->paginate(20);
