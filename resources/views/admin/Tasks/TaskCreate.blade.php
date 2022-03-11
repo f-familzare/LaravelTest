@@ -18,10 +18,10 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="inputName" class=" control-label">نام و نام خانوادگی</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                           id="inputName"
-                                           placeholder="نام و نام خانوادگی را وارد کنید" name="name">
+                                    <label for="inputTitle" class=" control-label">عنوان کار</label>
+                                    <input type="text" class="form-control @error('title') is-invalid @enderror"
+                                           id="inputTitle"
+                                           placeholder="عنوان کار را وارد کنید" name="title">
                                     @error('name')
                                     <span class="invalid-feedback d-block" role="alert">
                                         <strong>{{ $message }}</strong>

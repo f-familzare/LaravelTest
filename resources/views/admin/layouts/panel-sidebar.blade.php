@@ -60,6 +60,31 @@
                         </ul>
                     </li>
 
+                    <li class="nav-item has-treeview {{routeIsActive('panel/tasks','menu-open')}} ">
+                        <a href="#" class="nav-link {{routeIsActive('panel/tasks','active')}}">
+                            <i class="nav-icon fa fa-users"></i>
+                            <p>
+                                کاربران
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.tasks.index')}}" class="nav-link {{routeIsActive('panel/users','active')}}">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>لیست کاربران</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('admin.tasks.create')}}" class="nav-link {{routeIsActive('panel/users/create','active')}}">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>افزودن کاربر جدید</p>
+                                </a>
+                            </li>
+                          
+                        </ul>
+                    </li>
+
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
