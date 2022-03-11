@@ -30,10 +30,24 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="inputEmail3" class=" control-label">ایمیل</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                           id="inputEmail3"
-                                           placeholder="ایمیل را وارد کنید" name="email">
+                                    <label for="inputDescription" class=" control-label">ایمیل</label>
+                                    <textarea class="form-control @error('description') is-invalid @enderror" aria-placeholder="توضیحات را وارد کنید" name="description" id="inputDescription" cols="30" rows="10">
+                                    </textarea>
+                                    @error('email')
+                                    <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="inputDescription" class=" control-label">ایمیل</label>
+                                    <select name="user_id" id="userId" multiple>
+                                        <option value="0" disabled>کاربر/کاربران را انتخاب کنید</option>
+                                        @foreach($users as $user)
+                                            <option value="{{$user->id}}">{{$user->name}}</option>
+                                        @endforeach
+                                    </select>
                                     @error('email')
                                     <span class="invalid-feedback d-block" role="alert">
                                         <strong>{{ $message }}</strong>

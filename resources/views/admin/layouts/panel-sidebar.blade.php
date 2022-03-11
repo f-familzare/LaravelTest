@@ -72,16 +72,16 @@
                             <li class="nav-item">
                                 <a href="{{route('admin.tasks.index')}}" class="nav-link {{routeIsActive('panel/users','active')}}">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>لیست کاربران</p>
+                                    <p>لیست کارها</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('admin.tasks.create')}}" class="nav-link {{routeIsActive('panel/users/create','active')}}">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>افزودن کاربر جدید</p>
+                                    <p>افزودن کار جدید</p>
                                 </a>
                             </li>
-                          
+
                         </ul>
                     </li>
 
