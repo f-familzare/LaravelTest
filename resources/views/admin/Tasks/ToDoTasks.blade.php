@@ -5,17 +5,6 @@
             <h3 class="card-title">لیست کار های انجام نشده (ToDo)</h3>
             <div class="card-tools d-flex">
                 <a href="{{route('admin.tasks.create')}}" class="btn btn-info ml-2">ایجاد کار جدید</a>
-                <form action="{{route('admin.tasks.search')}}">
-                    <div class="input-group input-group-sm">
-                        <input type="text" name="search" class="form-control float-right"
-                               placeholder="جستجو">
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-
             </div>
         </div>
         <div class="card-body table-responsive p-0">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Panel\TaskRequest;
 use App\Model\Task;
 use App\User;
 use Illuminate\Http\Request;
@@ -41,7 +42,7 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TaskRequest $request)
     {
         $task=Task::create([
             'title'=>$request->input('title'),
@@ -83,7 +84,7 @@ class TaskController extends Controller
      * @param  int  $task
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Task $task)
+    public function update(TaskRequest $request, Task $task)
     {
         $task->update([
             'title'=>$request->input('title'),
