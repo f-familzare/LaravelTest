@@ -53,6 +53,12 @@
                         <td>{{$DoneTask->expire_at}}</td>
                         <td>
                             <div class="form-group d-flex">
+                                <form action="{{route('admin.tasks.restart',['task'=>$DoneTask->id])}}" method="post">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button class="btn btn-sm btn-outline-dark" title="ُشروع مجدد کار"><i class="fa fa-refresh"></i></button>
+                                </form>
+
                                 <a href="{{route('admin.tasks.edit',['task'=>$DoneTask->id])}}"
                                    class="btn btn-sm btn-info"><i class="fa fa-pencil"></i></a>
                                 <form action="{{route('admin.tasks.destroy',['task'=>$DoneTask->id])}}" method="post">

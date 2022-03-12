@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    use ChangeTaskStatus;
     /**
      * Display a listing of the resource.
      *
@@ -106,12 +107,4 @@ class TaskController extends Controller
 
     }
 
-    public function addToDoing(Request $request,Task $task)
-    {
-        $task->update([
-            'status'=>'Doing'
-        ]);
-        alert()->success('وضعیت کار به در حال انجام تغییر کرد');
-        return redirect()->back();
-    }
 }

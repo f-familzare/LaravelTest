@@ -54,8 +54,13 @@
                         <td>{{$TodoTask->expire_at}}</td>
                         <td>
                             <div class="form-group d-flex">
+                                <form action="{{route('admin.tasks.start',['task'=>$TodoTask->id])}}" method="post">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button class="btn btn-sm btn-outline-warning" title="کار در انجام است"><i class="fa fa-play"></i></button>
+                                </form>
                                 <a href="{{route('admin.tasks.edit',['task'=>$TodoTask->id])}}"
-                                   class="btn btn-sm btn-info"><i class="fa fa-pencil"></i></a>
+                                class="btn btn-sm btn-info"><i class="fa fa-pencil"></i></a>
                                     <form action="{{route('admin.tasks.destroy',['task'=>$TodoTask->id])}}" method="post">
                                         @csrf
                                         @method('DELETE')

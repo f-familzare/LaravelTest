@@ -53,6 +53,11 @@
                         <td>{{$DoingTask->expire_at}}</td>
                         <td>
                             <div class="form-group d-flex">
+                                <form action="{{route('admin.tasks.done',['task'=>$DoingTask->id])}}" method="post">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button class="btn btn-sm btn-outline-success" title="کار انجام شد"><i class="fa fa-check" ></i></button>
+                                </form>
                                 <a href="{{route('admin.tasks.edit',['task'=>$DoingTask->id])}}"
                                    class="btn btn-sm btn-info"><i class="fa fa-pencil"></i></a>
                                     <form action="{{route('admin.tasks.destroy',['task'=>$DoingTask->id])}}" method="post">
