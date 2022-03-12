@@ -13,4 +13,9 @@ class Task extends Model
     {
         return $this->belongsToMany(User::class);
     }
+    public function scopeSearch($query,$search,$type)
+    {
+        $query->where($type,'like','%'.$search.'%')->get();
+        return $query;
+    }
 }

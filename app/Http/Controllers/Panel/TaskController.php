@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Task;
 use App\User;
 use Illuminate\Http\Request;
+use function Symfony\Component\String\u;
 
 class TaskController extends Controller
 {
@@ -17,9 +18,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $TodoTasks=Task::whereStatus('ToDo')->latest()->paginate(20);
-        $DoingTasks=Task::whereStatus('Doing')->latest()->paginate(20);
-        $DoneTasks=Task::whereStatus('Done')->latest()->paginate(20);
+        $TodoTasks=Task::with('user')->whereStatus('ToDo')->latest()->paginate(20);
+        $DoingTasks=Task::with('user')->whereStatus('Doing')->latest()->paginate(20);
+        $DoneTasks=Task::with('user')->whereStatus('Done')->latest()->paginate(20);
         return view('admin.Tasks.TaskList',compact('TodoTasks','DoingTasks','DoneTasks'));
     }
 
@@ -71,7 +72,8 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        $users=User::all();
+        return view('admin.Tasks.TaskEdit',compact('task','users'));
     }
 
     /**
@@ -105,6 +107,13 @@ class TaskController extends Controller
         $task->delete();
         return redirect(route('admin.tasks.index'));
 
+    }
+    public function search()
+    {
+        $search=\request('search');
+        $type=\request('type');
+        $users=Task::search($search,$type)->paginate(20);
+        return view('admin.Tasks.TaskList', ['task' => $users]);
     }
 
 }

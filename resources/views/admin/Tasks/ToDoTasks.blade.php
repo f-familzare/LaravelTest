@@ -4,8 +4,8 @@
         <div class="card-header">
             <h3 class="card-title">لیست کار های انجام نشده (ToDo)</h3>
             <div class="card-tools d-flex">
-                <a href="{{route('admin.users.create')}}" class="btn btn-info ml-2">ایجاد کاربر جدید</a>
-                <form action="{{route('admin.users.search')}}">
+                <a href="{{route('admin.tasks.create')}}" class="btn btn-info ml-2">ایجاد کار جدید</a>
+                <form action="{{route('admin.tasks.search')}}">
                     <div class="input-group input-group-sm">
                         <input type="text" name="search" class="form-control float-right"
                                placeholder="جستجو">
@@ -13,9 +13,9 @@
                             <label for="s-type"></label>
                             <select name="type" id="s-type" class="form-control">
                                 <option value="" disabled selected>بر اساس...</option>
-                                <option value="name">نام</option>
-                                <option value="email">ایمیل</option>
-                                <option value="mobile">موبایل</option>
+                                <option value="ToDo">انجام شده</option>
+                                <option value="Doing">در حال انجام</option>
+                                <option value="Done">انجام شده</option>
                             </select>
                         </div>
                         <div class="input-group-append">
