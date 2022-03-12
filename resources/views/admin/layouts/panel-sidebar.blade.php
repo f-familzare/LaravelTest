@@ -85,6 +85,21 @@
                         </ul>
                     </li>
 
+                    <li class="nav-item has-treeview menu-open">
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('logout')}}" class="nav-link" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    {{ __('خروج') }}
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

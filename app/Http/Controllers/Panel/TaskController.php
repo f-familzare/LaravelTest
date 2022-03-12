@@ -105,4 +105,13 @@ class TaskController extends Controller
         return redirect(route('admin.tasks.index'));
 
     }
+
+    public function addToDoing(Request $request,Task $task)
+    {
+        $task->update([
+            'status'=>'Doing'
+        ]);
+        alert()->success('وضعیت کار به در حال انجام تغییر کرد');
+        return redirect()->back();
+    }
 }

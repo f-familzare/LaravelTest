@@ -6,6 +6,7 @@ Route::group([],function (){
     Route::resource('users','UserController');
     Route::get('/search/users', 'UserController@search')->name('users.search');
     Route::resource('tasks','TaskController');
+    Route::patch('tasks/doing/{task}', 'TaskController@addToDoing');
 });
 
 

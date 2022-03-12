@@ -1,14 +1,14 @@
 @component('admin.layouts.panel-content', ['title'=>'پنل مدیریت'])
     @slot('breadcrumb')
         <li class="breadcrumb-item"><a href="{{route('admin.panel')}}">داشبورد</a></li>
-        <li class="breadcrumb-item"><a href="{{route('admin.users.index')}}">کاربران</a></li>
+        <li class="breadcrumb-item"><a href="{{route('admin.users.index')}}">کارها</a></li>
         <li class="breadcrumb-item">افزودن کار جدید</li>
     @endslot
     <div class="row ">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">افزودن کاربر جدید</h3>
+                    <h3 class="card-title">افزودن کار جدید</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -73,11 +73,29 @@
                                     </span>
                                     @enderror
                                 </div>
-
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="radio radio-inline">
+                                        <label>
+                                            <input type="radio" class="btn btn-success" name="visibility" id="visibility1"
+                                                   value="show"
+                                                   checked>
+                                            <button type="button" class="btn btn-success btn-xs"><i class="icon-eye-open"></i>
+                                            </button>
+                                        </label>
+                                    </div>
+                                    <div class="radio radio-inline">
+                                        <label>
+                                            <input type="radio" name="visibility" id="visibility2" value="hidden">
+                                            <button type="button" class="btn btn-danger btn-xs"><i class="icon-eye-close"></i>
+                                            </button>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-            </div>
             <!-- /.card-body -->
             <div class="card-footer">
                 <button type="submit" class="btn btn-info">ایجاد</button>
