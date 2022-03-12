@@ -43,7 +43,6 @@
                                     @enderror
                                 </div>
 
-
                             </div>
                         </div>
 
@@ -64,7 +63,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputDate" class="control-label">زمان پایان</label>
-                                    <input type="datetime-local" class="form-control @error('expire_at') is-invalid @enderror"
+                                    <input type="datetime-local"
+                                           class="form-control @error('expire_at') is-invalid @enderror"
                                            id="inputTitle"
                                            placeholder="مهلت انجام کار را وارد کنید" name="expire_at">
                                     @error('expire_at')
@@ -73,38 +73,50 @@
                                     </span>
                                     @enderror
                                 </div>
+
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="radio radio-inline">
-                                        <label>
-                                            <input type="radio" class="btn btn-success" name="visibility" id="visibility1"
-                                                   value="show"
-                                                   checked>
-                                            <button type="button" class="btn btn-success btn-xs"><i class="icon-eye-open"></i>
-                                            </button>
-                                        </label>
+                                <div class="col-lg-2">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><input type="radio" name="status" id="ToDo" value="ToDo" checked></span>
+                                        </div>
+                                        <input type="text" id="ToDo" class="form-control" value="انجام نشده" disabled>
                                     </div>
-                                    <div class="radio radio-inline">
-                                        <label>
-                                            <input type="radio" name="visibility" id="visibility2" value="hidden">
-                                            <button type="button" class="btn btn-danger btn-xs"><i class="icon-eye-close"></i>
-                                            </button>
-                                        </label>
+                                    <!-- /input-group -->
+                                </div>
+
+                                <div class="col-lg-2">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><input type="radio" name="status" id="Doing" value="Doing"></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="Doing" value="در حال انجام" disabled>
                                     </div>
+                                    <!-- /input-group -->
+                                </div>
+
+                                <div class="col-lg-2">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><input type="radio" name="status" id="Done" value="Done"></span>
+                                        </div>
+                                        <input type="text" class="form-control"  value="انجام شده" id="Done" disabled>
+                                    </div>
+                                    <!-- /input-group -->
                                 </div>
                             </div>
                         </div>
                     </div>
-            <!-- /.card-body -->
-            <div class="card-footer">
-                <button type="submit" class="btn btn-info">ایجاد</button>
-                <button type="reset" class="btn btn-default float-left">لغو</button>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-info">ایجاد</button>
+                        <button type="reset" class="btn btn-default float-left">لغو</button>
+                    </div>
+                    <!-- /.card-footer -->
+                </form>
             </div>
-            <!-- /.card-footer -->
-            </form>
         </div>
-    </div>
 
     </div>
 @endcomponent

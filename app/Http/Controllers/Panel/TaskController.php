@@ -46,7 +46,7 @@ class TaskController extends Controller
             'title'=>$request->input('title'),
             'description'=>$request->input('description'),
             'expire_at'=>$request->input('expire_at'),
-            'status'=>'ToDo'
+            'status'=>$request->input('status'),
         ]);
         $task->user()->sync($request->input('users'));
         return redirect(route('admin.tasks.index'));
