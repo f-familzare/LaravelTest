@@ -112,7 +112,7 @@ class TaskController extends Controller
     {
         $search=\request('search');
         $type=\request('type');
-        $users=Task::search($search,$type)->paginate(20);
+        $users=Task::search($search)->paginate(20);
         return view('admin.Tasks.TaskList', ['task' => $users]);
     }
 

@@ -10,15 +10,6 @@
                         <input type="text" name="search" class="form-control float-right"
                                placeholder="جستجو">
                         <div class="input-group-append">
-                            <label for="s-type"></label>
-                            <select name="type" id="s-type" class="form-control">
-                                <option value="" disabled selected>بر اساس...</option>
-                                <option value="ToDo">انجام شده</option>
-                                <option value="Doing">در حال انجام</option>
-                                <option value="Done">انجام شده</option>
-                            </select>
-                        </div>
-                        <div class="input-group-append">
                             <button type="submit" class="btn btn-default"><i class="fa fa-search"></i>
                             </button>
                         </div>
